@@ -1,5 +1,8 @@
 package view;
 
+import controller.CadastroPaciente;
+
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class SubMenu {
@@ -14,33 +17,41 @@ public class SubMenu {
         System.out.println("3. Enfermeiro");
         System.out.println("4. Retornar");
         System.out.println("-------------------");
-        escolha = scanner.nextInt();
-        switch(escolha){
-            case 1:
-                //cadastro
-                break;
-            case 2:
-                //cadastro
-                break;
-            case 3:
-                //cadastro
-                break;
-            case 4:
-                //retorna
-                break;
-            default:
-                System.out.println("Opção Inválida");
-                System.out.println("");
+        try{
+            escolha = scanner.nextInt();
+            switch(escolha){
+                case 1:
+                    CadastroPaciente.cadastrar();
+                    break;
+                case 2:
+                    //cadastro
+                    break;
+                case 3:
+                    //cadastro
+                    break;
+                case 4:
+                    //retorna
+                    break;
+                default:
+                    System.out.println("Opção Inválida");
+                    System.out.println("");
 
-                try {
-                    System.out.println("Pressione Enter para Continuar");
-                    System.in.read();
-                }catch(Exception e){
+                    try {
+                        System.out.println("Pressione Enter para Continuar");
+                        System.in.read();
+                    }catch(Exception e){
 
-                }
-                cadastro();
-                break;
+                    }
+                    cadastro();
+                    break;
+            }
         }
+        catch(InputMismatchException e){
+            System.out.println("Informe apenas Números");
+            System.out.println("");
+            cadastro();
+        }
+
     }
     public static void listagem(){
         Scanner scanner = new Scanner(System.in);

@@ -1,4 +1,4 @@
-package dao;
+package dataAcessObject;
 
 import models.*;
 
@@ -12,12 +12,13 @@ public class Listas {
     List<Medico> medicos;
     List<Enfermeiro> enfermeiros;
     private Listas(){
-        id = 1;
+        id = 0;
         pacientes = new ArrayList<>();
         medicos = new ArrayList<>();
         enfermeiros = new ArrayList<>();
     }
     public void addPaciente(Paciente paciente){
+        paciente.setId(this.id);
         pacientes.add(paciente);
         id++;
     }

@@ -1,6 +1,6 @@
 package controller;
 
-import dao.Listas;
+import dataAcessObject.Listas;
 import models.Medico;
 
 public class CadastroMedico {

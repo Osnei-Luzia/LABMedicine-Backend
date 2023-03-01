@@ -16,5 +16,31 @@ public class Paciente extends Pessoa {
     */
     int atendimentos = 0;
 
-    //atualizar status paciente
+    public void setContato(String contato) {
+        this.contato = contato;
+    }
+
+    public void setAlergias(String alergia,int index) {
+        this.alergias[index] = alergia;
+    }
+
+    public void setCuidados(String cuidado,int index) {
+        this.cuidados[index] = cuidado;
+    }
+
+    public void setConvenio(String convenio) {
+        this.convenio = convenio;
+    }
+
+    public void setNumeroConvenio(String numeroConvenio) {
+        this.numeroConvenio = numeroConvenio;
+    }
+
+    public void setValidadeConvenio(String validadeConvenio) {
+        this.validadeConvenio = validadeConvenio;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 }

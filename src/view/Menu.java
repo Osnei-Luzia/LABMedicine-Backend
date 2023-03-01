@@ -1,5 +1,6 @@
 package view;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import controller.*;
 public class Menu {
@@ -17,7 +18,14 @@ public class Menu {
         System.out.println("3. Listagens");
         System.out.println("0. Sair");
         System.out.println("-------------------");
-        escolha = scanner.nextInt();
+        try{
+            escolha = scanner.nextInt();
+        }
+        catch(InputMismatchException e){
+            System.out.println("Informe apenas Números");
+            System.out.println("");
+            apresentar();
+        }
         switch(escolha){
             case 1:
                 SubMenu.cadastro();
