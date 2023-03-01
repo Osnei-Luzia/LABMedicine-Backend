@@ -13,16 +13,16 @@ public class CadastroMedico {
         Medico medico = new Medico();
 
         //Pessoa
-        System.out.println("Informe o nome");
-        medico.setNome(scanner.nextLine());
-        System.out.println("Informe o gênero: Masculino, Feminino ou Outro");
+        System.out.println("Informe o nome - Obrigatório");
+        medico.setNome(Validacoes.campoObrigatorio(scanner.nextLine()));
+        System.out.println("Informe o gênero: Masculino, Feminino ou Outro - Obrigatório");
         medico.setGenero(scanner.nextLine());
-        System.out.println("Informe a data de nascimento. 00/00/0000");
-        //isNascimentoValido(scanner.nextLine());
-        System.out.println("Informe o CPF");
-        medico.setCpf(scanner.nextLine());
-        System.out.println("Informe o Telefone");
-        medico.setTelefone(scanner.nextLine());
+        System.out.println("Informe a data de nascimento. 00/00/0000 - Obrigatório");
+        medico.setNascimento(Validacoes.isDataValida(Validacoes.campoObrigatorio(scanner.nextLine())));
+        System.out.println("Informe o CPF - Obrigatório");
+        medico.setCpf(Validacoes.campoObrigatorio(scanner.nextLine()));
+        System.out.println("Informe o Telefone - Obrigatório");
+        medico.setTelefone(Validacoes.campoObrigatorio(scanner.nextLine()));
 
         //Medico
         System.out.println("Informe a Instituição de Ensino da Formação");

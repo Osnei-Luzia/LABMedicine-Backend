@@ -1,5 +1,6 @@
 package models;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,7 +10,7 @@ public class Paciente extends Pessoa {
     List<String> cuidados = new ArrayList<>();
     String convenio;
     String numeroConvenio;
-    String validadeConvenio;
+    LocalDate validadeConvenio;
     String status;
     /*
         1. Aguardando Atendimento
@@ -23,12 +24,12 @@ public class Paciente extends Pessoa {
         this.contato = contato;
     }
 
-    public void setAlergias(String alergia) {
-        this.alergias.add(alergia);
+    public void setAlergias(List<String> alergias) {
+        this.alergias = alergias;
     }
 
-    public void setCuidados(String cuidado) {
-        this.cuidados.add(cuidado);
+    public void setCuidados(List<String> cuidados) {
+        this.cuidados = cuidados;
     }
 
     public void setConvenio(String convenio) {
@@ -39,7 +40,7 @@ public class Paciente extends Pessoa {
         this.numeroConvenio = numeroConvenio;
     }
 
-    public void setValidadeConvenio(String validadeConvenio) {
+    public void setValidadeConvenio(LocalDate validadeConvenio) {
         this.validadeConvenio = validadeConvenio;
     }
 

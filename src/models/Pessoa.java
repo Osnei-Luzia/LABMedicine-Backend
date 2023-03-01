@@ -1,12 +1,12 @@
 package models;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 
 public class Pessoa {
     int id;
     String nome;
     String genero; //Masculino, Feminino, Outro
-    Calendar nascimento;
+    LocalDate nascimento;
     String cpf;
     String telefone;
 
@@ -22,7 +22,7 @@ public class Pessoa {
         this.genero = genero;
     }
 
-    public void setNascimento(Calendar nascimento) {
+    public void setNascimento(LocalDate nascimento) {
         this.nascimento = nascimento;
     }
 

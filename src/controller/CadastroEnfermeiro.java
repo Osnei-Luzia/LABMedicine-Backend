@@ -14,16 +14,16 @@ public class CadastroEnfermeiro {
         String resposta;
 
         //Pessoa
-        System.out.println("Informe o nome");
-        enfermeiro.setNome(scanner.nextLine());
-        System.out.println("Informe o gênero: Masculino, Feminino ou Outro");
+        System.out.println("Informe o nome - Obrigatório");
+        enfermeiro.setNome(Validacoes.campoObrigatorio(scanner.nextLine()));
+        System.out.println("Informe o gênero: Masculino, Feminino ou Outro - Obrigatório");
         enfermeiro.setGenero(scanner.nextLine());
-        System.out.println("Informe a data de nascimento. 00/00/0000");
-        //isNascimentoValido(scanner.nextLine());
-        System.out.println("Informe o CPF");
-        enfermeiro.setCpf(scanner.nextLine());
-        System.out.println("Informe o Telefone");
-        enfermeiro.setTelefone(scanner.nextLine());
+        System.out.println("Informe a data de nascimento. 00/00/0000 - Obrigatório");
+        enfermeiro.setNascimento(Validacoes.isDataValida(Validacoes.campoObrigatorio(scanner.nextLine())));
+        System.out.println("Informe o CPF - Obrigatório");
+        enfermeiro.setCpf(Validacoes.campoObrigatorio(scanner.nextLine()));
+        System.out.println("Informe o Telefone - Obrigatório");
+        enfermeiro.setTelefone(Validacoes.campoObrigatorio(scanner.nextLine()));
 
         //Enfermeiro
         System.out.println("Informe a Instituição de Ensino da Formação");
