@@ -11,13 +11,12 @@ public class CadastroPaciente{
         Scanner scanner = new Scanner(System.in);
         Listas banco = Listas.getInstance();
         Paciente paciente = new Paciente();
-        //String resposta;
 
         //Pessoa
         System.out.println("Informe o nome - Obrigatório");
         paciente.setNome(Validacoes.campoObrigatorio(scanner.nextLine()));
         System.out.println("Informe o gênero: Masculino, Feminino ou Outro - Obrigatório");
-        paciente.setGenero(scanner.nextLine());
+        paciente.setGenero(Validacoes.campoObrigatorio(Validacoes.isGeneroValido(scanner.nextLine())));
         System.out.println("Informe a data de nascimento. 00/00/0000 - Obrigatório");
         paciente.setNascimento(Validacoes.isDataValida(Validacoes.campoObrigatorio(scanner.nextLine())));
         System.out.println("Informe o CPF - Obrigatório");

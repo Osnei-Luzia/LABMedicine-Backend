@@ -23,10 +23,12 @@ public class Listas {
         id++;
     }
     public void addMedico(Medico medico){
+        medico.setId(this.id);
         medicos.add(medico);
         id++;
     }
     public void addEnfermeiro(Enfermeiro enfermeiro){
+        enfermeiro.setId(this.id);
         enfermeiros.add(enfermeiro);
         id++;
     }

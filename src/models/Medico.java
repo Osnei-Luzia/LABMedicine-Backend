@@ -29,7 +29,11 @@ public class Medico extends Pessoa{
         this.especializacao = especializacao;
     }
 
-    public void setStatus(boolean status) {
-        this.status = status;
+    public void setStatus(String status) {
+        if(status=="ativo"){
+            this.status = true;
+        }else if(status=="inativo"){
+            this.status = false;
+        }
     }
 }

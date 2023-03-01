@@ -2,7 +2,6 @@ package controller;
 
 import dataAcessObject.Listas;
 import models.Medico;
-import models.Paciente;
 
 import java.util.Scanner;
 
@@ -16,7 +15,7 @@ public class CadastroMedico {
         System.out.println("Informe o nome - Obrigatório");
         medico.setNome(Validacoes.campoObrigatorio(scanner.nextLine()));
         System.out.println("Informe o gênero: Masculino, Feminino ou Outro - Obrigatório");
-        medico.setGenero(scanner.nextLine());
+        medico.setGenero(Validacoes.campoObrigatorio(Validacoes.isGeneroValido(scanner.nextLine())));
         System.out.println("Informe a data de nascimento. 00/00/0000 - Obrigatório");
         medico.setNascimento(Validacoes.isDataValida(Validacoes.campoObrigatorio(scanner.nextLine())));
         System.out.println("Informe o CPF - Obrigatório");
@@ -31,7 +30,8 @@ public class CadastroMedico {
         medico.setCrm(Validacoes.campoObrigatorio(scanner.nextLine()));
         System.out.println("Informe a especialização");
         medico.setEspecializacao(Validacoes.campoObrigatorio(scanner.nextLine()));
-        //medico.setStatus();
+        System.out.println("O médico está Ativo ou Inativo?");
+        medico.setStatus(Validacoes.campoObrigatorio(Validacoes.isStatusValido(scanner.nextLine())));
         banco.addMedico(medico);
         try {
             System.out.println("");

@@ -40,6 +40,21 @@ public class Validacoes {
         }else{
             return null;
         }
-
+    }
+    public static String isGeneroValido(String resposta){
+        Scanner scanner = new Scanner(System.in);
+        while(resposta!="Masculino"||resposta!="Feminino"||resposta!="Outro"){
+            System.out.println("Somente permitido: Masculino, Feminino ou Outro");
+            resposta = scanner.nextLine();
+        }
+        return resposta;
+    }
+    public static String isStatusValido(String resposta){
+        Scanner scanner = new Scanner(System.in);
+        while(resposta!="Ativo"||resposta!="ativo"||resposta!="Inativo"||resposta!="inativo"){
+            System.out.println("Somente permitido: Ativo ou Inativo");
+            resposta = scanner.nextLine();
+        }
+        return resposta;
     }
 }

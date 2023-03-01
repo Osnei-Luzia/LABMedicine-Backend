@@ -2,7 +2,6 @@ package controller;
 
 import dataAcessObject.Listas;
 import models.Enfermeiro;
-import models.Medico;
 
 import java.util.Scanner;
 
@@ -11,13 +10,12 @@ public class CadastroEnfermeiro {
         Scanner scanner = new Scanner(System.in);
         Listas banco = Listas.getInstance();
         Enfermeiro enfermeiro = new Enfermeiro();
-        String resposta;
 
         //Pessoa
         System.out.println("Informe o nome - Obrigatório");
         enfermeiro.setNome(Validacoes.campoObrigatorio(scanner.nextLine()));
         System.out.println("Informe o gênero: Masculino, Feminino ou Outro - Obrigatório");
-        enfermeiro.setGenero(scanner.nextLine());
+        enfermeiro.setGenero(Validacoes.campoObrigatorio(Validacoes.isGeneroValido(scanner.nextLine())));
         System.out.println("Informe a data de nascimento. 00/00/0000 - Obrigatório");
         enfermeiro.setNascimento(Validacoes.isDataValida(Validacoes.campoObrigatorio(scanner.nextLine())));
         System.out.println("Informe o CPF - Obrigatório");
