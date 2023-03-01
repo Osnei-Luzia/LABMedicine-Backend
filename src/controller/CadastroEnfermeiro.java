@@ -27,9 +27,9 @@ public class CadastroEnfermeiro {
 
         //Enfermeiro
         System.out.println("Informe a Instituição de Ensino da Formação");
-        enfermeiro.setInstituicao(scanner.nextLine());
+        enfermeiro.setInstituicao(Validacoes.campoObrigatorio(scanner.nextLine()));
         System.out.println("Informe o COFEN/UF");
-        enfermeiro.setCofen(scanner.nextLine());
+        enfermeiro.setCofen(Validacoes.campoObrigatorio(scanner.nextLine()));
         banco.addEnfermeiro(enfermeiro);
         try {
             System.out.println("");

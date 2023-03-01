@@ -26,11 +26,11 @@ public class CadastroMedico {
 
         //Medico
         System.out.println("Informe a Instituição de Ensino da Formação");
-        medico.setInstituicao(scanner.nextLine());
+        medico.setInstituicao(Validacoes.campoObrigatorio(scanner.nextLine()));
         System.out.println("Informe o CRM");
-        medico.setCrm(scanner.nextLine());
+        medico.setCrm(Validacoes.campoObrigatorio(scanner.nextLine()));
         System.out.println("Informe a especialização");
-        medico.setEspecializacao(scanner.nextLine());
+        medico.setEspecializacao(Validacoes.campoObrigatorio(scanner.nextLine()));
         //medico.setStatus();
         banco.addMedico(medico);
         try {
