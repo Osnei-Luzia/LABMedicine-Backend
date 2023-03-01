@@ -1,9 +1,12 @@
 package models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Paciente extends Pessoa {
     String contato;
-    String[] alergias;
-    String[] cuidados;
+    List<String> alergias = new ArrayList<>();
+    List<String> cuidados = new ArrayList<>();
     String convenio;
     String numeroConvenio;
     String validadeConvenio;
@@ -20,12 +23,12 @@ public class Paciente extends Pessoa {
         this.contato = contato;
     }
 
-    public void setAlergias(String alergia,int index) {
-        this.alergias[index] = alergia;
+    public void setAlergias(String alergia) {
+        this.alergias.add(alergia);
     }
 
-    public void setCuidados(String cuidado,int index) {
-        this.cuidados[index] = cuidado;
+    public void setCuidados(String cuidado) {
+        this.cuidados.add(cuidado);
     }
 
     public void setConvenio(String convenio) {

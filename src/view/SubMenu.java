@@ -1,5 +1,7 @@
 package view;
 
+import controller.CadastroEnfermeiro;
+import controller.CadastroMedico;
 import controller.CadastroPaciente;
 
 import java.util.InputMismatchException;
@@ -24,10 +26,10 @@ public class SubMenu {
                     CadastroPaciente.cadastrar();
                     break;
                 case 2:
-                    //cadastro
+                    CadastroMedico.cadastrar();
                     break;
                 case 3:
-                    //cadastro
+                    CadastroEnfermeiro.cadastrar();
                     break;
                 case 4:
                     //retorna

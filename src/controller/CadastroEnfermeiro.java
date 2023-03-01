@@ -5,7 +5,7 @@ import models.Enfermeiro;
 
 public class CadastroEnfermeiro {
     Listas banco = Listas.getInstance();
-    public void cadastrar(){
+    public static void cadastrar(){
         Enfermeiro enfermeiro = new Enfermeiro();
         banco.addEnfermeiro(enfermeiro);
     }
