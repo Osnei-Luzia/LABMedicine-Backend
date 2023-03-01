@@ -1,4 +1,4 @@
-package cadastros;
+package models;
 
 public class Enfermeiro extends Pessoa {
     String instituicao;

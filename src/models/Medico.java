@@ -1,4 +1,4 @@
-package cadastros;
+package models;
 
 public class Medico extends Pessoa{
     String instituicao;
