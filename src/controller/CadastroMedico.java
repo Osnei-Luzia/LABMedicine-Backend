@@ -11,7 +11,6 @@ public class CadastroMedico {
         Scanner scanner = new Scanner(System.in);
         Listas banco = Listas.getInstance();
         Medico medico = new Medico();
-        String resposta;
 
         //Pessoa
         System.out.println("Informe o nome");
