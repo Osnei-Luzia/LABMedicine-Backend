@@ -81,7 +81,7 @@ public class SubMenu {
         }catch(Exception e){
 
         }
-        cadastro();
+        listagem();
         break;
     }
 }

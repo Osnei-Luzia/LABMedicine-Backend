@@ -3,9 +3,12 @@ package view;
 import java.util.Scanner;
 import controller.*;
 public class Menu {
+
     public static void apresentar(){
+        boolean run = true;
         Scanner scanner = new Scanner(System.in);
         int escolha = 0;
+        while(run){
         System.out.println("-------------------");
         System.out.println("LABMedicine-Backend");
         System.out.println("");
@@ -26,6 +29,7 @@ public class Menu {
                 SubMenu.listagem();
                 break;
             case 0:
+                run = false;
                 break;
             default:
                 System.out.println("Opção Inválida");
@@ -39,5 +43,6 @@ public class Menu {
                 apresentar();
                 break;
             }
+        }
     }
 }
