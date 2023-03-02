@@ -8,8 +8,8 @@ import java.util.Scanner;
 
 
 public class Validacoes {
+    static Scanner scanner = new Scanner(System.in);
     public static String isDataValida(String resposta) {
-        Scanner scanner = new Scanner(System.in);
         try {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
             LocalDate dataFormatada = LocalDate.parse(resposta, formatter);
@@ -21,7 +21,6 @@ public class Validacoes {
     }
 
     public static String campoObrigatorio(String resposta) {
-        Scanner scanner = new Scanner(System.in);
         while (resposta == null || resposta == "") {
             System.out.println("Campo Obrigatório, tente novamente");
             resposta = scanner.nextLine();
@@ -30,7 +29,6 @@ public class Validacoes {
     }
 
     public static List<String> repetirCampo(String resposta) {
-        Scanner scanner = new Scanner(System.in);
         List<String> lista = new ArrayList<>();
         while (!resposta.equals("")) {
             lista.add(resposta);
@@ -41,7 +39,6 @@ public class Validacoes {
     }
 
     public static String isGeneroValido(String resposta) {
-        Scanner scanner = new Scanner(System.in);
         while (!resposta.equals("Masculino") && !resposta.equals("Feminino") && !resposta.equals("Outro")) {
             System.out.println("Somente permitido: Masculino, Feminino ou Outro");
             resposta = scanner.nextLine();
@@ -50,7 +47,6 @@ public class Validacoes {
     }
 
     public static String isStatusMedicoValido(String resposta) {
-        Scanner scanner = new Scanner(System.in);
         while (!resposta.equals("Ativo") && !resposta.equals("ativo") && !resposta.equals("Inativo") && !resposta.equals("inativo")) {
             System.out.println("Somente permitido: Ativo ou Inativo");
             resposta = scanner.nextLine();

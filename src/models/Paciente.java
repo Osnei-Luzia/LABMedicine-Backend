@@ -65,10 +65,6 @@ public class Paciente extends Pessoa {
         this.atendimentos++;
     }
 
-    public int getAtendimentos() {
-        return atendimentos;
-    }
-
     public void relatorio() {
         System.out.println("-------------------");
         System.out.println("ID: " + this.id);

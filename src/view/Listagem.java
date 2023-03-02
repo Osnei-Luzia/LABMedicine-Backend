@@ -8,8 +8,8 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Listagem {
+    static Scanner scanner = new Scanner(System.in);
     public static void pacientes() {
-        Scanner scanner = new Scanner(System.in);
         int escolha = 0;
         System.out.println("-------------------");
         System.out.println("Relatórios de Pacientes");
@@ -48,7 +48,6 @@ public class Listagem {
 
 
     public static void medicos() {
-        Scanner scanner = new Scanner(System.in);
         int escolha = 0;
         System.out.println("-------------------");
         System.out.println("Relatórios de Médicos");
@@ -90,7 +89,6 @@ public class Listagem {
     }
 
     public static void pessoas() {
-        Scanner scanner = new Scanner(System.in);
         int escolha = 0;
         System.out.println("-------------------");
         System.out.println("Relatórios de Pessoas");

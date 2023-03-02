@@ -1,13 +1,14 @@
 package view;
 
+import controller.Atendimento;
 import controller.cadastros.*;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class SubMenu {
+    static Scanner scanner = new Scanner(System.in);
     public static void cadastro() {
-        Scanner scanner = new Scanner(System.in);
         int escolha;
         System.out.println("-------------------");
         System.out.println("Cadastros");
@@ -54,7 +55,6 @@ public class SubMenu {
     }
 
     public static void atendimento() {
-        Scanner scanner = new Scanner(System.in);
         int escolha = 0;
         System.out.println("-------------------");
         System.out.println("Atendimento");
@@ -72,10 +72,10 @@ public class SubMenu {
         }
         switch (escolha) {
             case 1:
-                //atualizar status
+                Atendimento.atualizarStatus();
                 break;
             case 2:
-                //atendimento medico
+                Atendimento.atender();
                 break;
             case 0:
                 Menu.apresentar();
@@ -95,7 +95,6 @@ public class SubMenu {
     }
 
     public static void listagem() {
-        Scanner scanner = new Scanner(System.in);
         int escolha = 0;
         System.out.println("-------------------");
         System.out.println("Listagens");
