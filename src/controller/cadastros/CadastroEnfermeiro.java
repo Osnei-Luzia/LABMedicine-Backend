@@ -1,4 +1,4 @@
-package controller;
+package controller.cadastros;
 
 import dataAcessObject.Listas;
 import models.Enfermeiro;

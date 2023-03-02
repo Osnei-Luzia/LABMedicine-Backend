@@ -1,4 +1,4 @@
-package controller;
+package controller.cadastros;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
