@@ -18,7 +18,7 @@ public class CadastroPaciente{
         System.out.println("Informe o gênero: Masculino, Feminino ou Outro - Obrigatório");
         paciente.setGenero(Validacoes.campoObrigatorio(Validacoes.isGeneroValido(scanner.nextLine())));
         System.out.println("Informe a data de nascimento. 00/00/0000 - Obrigatório");
-        paciente.setNascimento(Validacoes.isDataValida(Validacoes.campoObrigatorio(scanner.nextLine())));
+        paciente.setNascimento(Validacoes.isDataValida(scanner.nextLine()));
         System.out.println("Informe o CPF - Obrigatório");
         paciente.setCpf(Validacoes.campoObrigatorio(scanner.nextLine()));
         System.out.println("Informe o Telefone - Obrigatório");
@@ -33,11 +33,23 @@ public class CadastroPaciente{
         paciente.setCuidados(Validacoes.repetirCampo(scanner.nextLine()));
         System.out.println("Informe o convênio");
         paciente.setConvenio(scanner.nextLine());
-        System.out.println("Informe o número do convênio");
-        paciente.setNumeroConvenio(scanner.nextLine());
-        System.out.println("Informe a data de vencimento do convênio");
-        paciente.setValidadeConvenio(Validacoes.isDataValida(scanner.nextLine()));
+        if(!paciente.getConvenio().equals("")){
+            System.out.println("Informe o número do convênio");
+            paciente.setNumeroConvenio(scanner.nextLine());
+            System.out.println("Informe a data de vencimento do convênio");
+            paciente.setValidadeConvenio(Validacoes.isDataValida(scanner.nextLine()));
+        }
         //paciente.setStatus();
         banco.addPaciente(paciente);
+        try {
+            System.out.println("");
+            System.out.println("Cadastro realizado com Sucesso.");
+            System.out.println("Enter para continuar");
+            System.out.println("");
+            System.in.read();
+            view.SubMenu.cadastro();
+        }catch(Exception e){
+
+        }
     }
 }

@@ -1,6 +1,7 @@
 package models;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,12 +37,20 @@ public class Paciente extends Pessoa {
         this.convenio = convenio;
     }
 
+    public String getConvenio() {
+        return convenio;
+    }
+
     public void setNumeroConvenio(String numeroConvenio) {
         this.numeroConvenio = numeroConvenio;
     }
 
-    public void setValidadeConvenio(LocalDate validadeConvenio) {
-        this.validadeConvenio = validadeConvenio;
+    public void setValidadeConvenio(String validadeConvenio) {
+        try{
+            this.validadeConvenio = LocalDate.parse(validadeConvenio, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+        }catch(NullPointerException e){
+            this.validadeConvenio = null;
+        }
     }
 
     public void setStatus(String status) {

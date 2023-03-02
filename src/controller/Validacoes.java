@@ -8,20 +8,20 @@ import java.util.Scanner;
 
 
 public class Validacoes {
-    public static LocalDate isDataValida(String data) {
-        try{
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-            LocalDate dataFormatada = LocalDate.parse(data, formatter);
-            return dataFormatada;
+    public static String isDataValida(String resposta) {
+        Scanner scanner = new Scanner(System.in);
+            try {
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+                LocalDate dataFormatada = LocalDate.parse(resposta, formatter);
+                return resposta;
+            } catch (Exception e) {
+                System.out.println("Formato inválido, use 00/00/0000");
+                return isDataValida(scanner.nextLine());
+            }
         }
-        catch (Exception e) {
-            System.out.println("Formato inválido");
-            return null;
-        }
-    }
     public static String campoObrigatorio(String resposta){
         Scanner scanner = new Scanner(System.in);
-        while(resposta==null){
+        while(resposta==null||resposta==""){
             System.out.println("Campo Obrigatório, tente novamente");
             resposta = scanner.nextLine();
         }
@@ -30,28 +30,24 @@ public class Validacoes {
     public static List<String> repetirCampo(String resposta){
         Scanner scanner = new Scanner(System.in);
         List<String> lista = new ArrayList<>();
-        if(resposta!=null){
-            while(resposta!=null){
+        while(!resposta.equals("")){
             lista.add(resposta);
             System.out.println("Informe mais ou deixe em branco.");
             resposta = scanner.nextLine();
-            }
-            return lista;
-        }else{
-            return null;
         }
+        return lista;
     }
     public static String isGeneroValido(String resposta){
         Scanner scanner = new Scanner(System.in);
-        while(resposta!="Masculino"||resposta!="Feminino"||resposta!="Outro"){
+        while(!resposta.equals("Masculino")&&!resposta.equals("Feminino")&&!resposta.equals("Outro")){
             System.out.println("Somente permitido: Masculino, Feminino ou Outro");
             resposta = scanner.nextLine();
         }
         return resposta;
     }
-    public static String isStatusValido(String resposta){
+    public static String isStatusMedicoValido(String resposta){
         Scanner scanner = new Scanner(System.in);
-        while(resposta!="Ativo"||resposta!="ativo"||resposta!="Inativo"||resposta!="inativo"){
+        while(!resposta.equals("Ativo")&&!resposta.equals("ativo")&&!resposta.equals("Inativo")&&!resposta.equals("inativo")){
             System.out.println("Somente permitido: Ativo ou Inativo");
             resposta = scanner.nextLine();
         }

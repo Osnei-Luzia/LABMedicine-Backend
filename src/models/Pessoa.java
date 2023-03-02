@@ -1,6 +1,7 @@
 package models;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Pessoa {
     int id;
@@ -22,8 +23,8 @@ public class Pessoa {
         this.genero = genero;
     }
 
-    public void setNascimento(LocalDate nascimento) {
-        this.nascimento = nascimento;
+    public void setNascimento(String nascimento) {
+        this.nascimento = LocalDate.parse(nascimento, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
     }
 
     public void setCpf(String cpf) {

@@ -32,7 +32,7 @@ public class SubMenu {
                     CadastroEnfermeiro.cadastrar();
                     break;
                 case 4:
-                    //retorna
+                    Menu.apresentar();
                     break;
                 default:
                     System.out.println("Opção Inválida");
@@ -82,7 +82,7 @@ public class SubMenu {
                 //listagem
                 break;
             case 5:
-                //Retornar
+                Menu.apresentar();
                 break;
         default:
             System.out.println("Opção Inválida");
