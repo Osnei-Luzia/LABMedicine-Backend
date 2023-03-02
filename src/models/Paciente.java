@@ -53,8 +53,23 @@ public class Paciente extends Pessoa {
         }
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setStatus(int status) {
+        switch (status) {
+            case 1:
+                this.status = "Aguardando Atendimento";
+                break;
+            case 2:
+                this.status = "Em Atendimento";
+                break;
+            case 3:
+                this.status = "Atendido";
+                break;
+            case 4:
+                this.status = "Não Atendido";
+                break;
+            default:
+                break;
+        }
     }
 
     public String getStatus() {

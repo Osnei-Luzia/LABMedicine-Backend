@@ -5,7 +5,7 @@ import models.*;
 
 import java.util.List;
 
-public class Pessoas {
+public class RelatorioPessoa {
     public static void listar(int escolha) {
         switch (escolha) {
             case 1:

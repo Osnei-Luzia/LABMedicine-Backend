@@ -73,9 +73,11 @@ public class SubMenu {
         switch (escolha) {
             case 1:
                 Atendimento.atualizarStatus();
+                atendimento();
                 break;
             case 2:
                 Atendimento.atender();
+                atendimento();
                 break;
             case 0:
                 Menu.apresentar();

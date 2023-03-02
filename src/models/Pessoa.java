@@ -15,6 +15,10 @@ public class Pessoa {
         this.id = id;
     }
 
+    public int getId() {
+        return id;
+    }
+
     public void setNome(String nome) {
         this.nome = nome;
     }
@@ -29,10 +33,6 @@ public class Pessoa {
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
-    }
-
-    public String getCpf() {
-        return cpf;
     }
 
     public void setTelefone(String telefone) {

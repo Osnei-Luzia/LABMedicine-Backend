@@ -5,7 +5,7 @@ import models.Paciente;
 
 import java.util.List;
 
-public class Pacientes {
+public class RelatorioPaciente {
     public static void listar(int escolha) {
         List<Paciente> pacientes;
         pacientes = Listas.getInstance().getPacientes();

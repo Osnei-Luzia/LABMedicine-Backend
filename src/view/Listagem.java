@@ -1,8 +1,8 @@
 package view;
 
-import controller.relatorios.Medicos;
-import controller.relatorios.Pacientes;
-import controller.relatorios.Pessoas;
+import controller.relatorios.RelatorioMedico;
+import controller.relatorios.RelatorioPaciente;
+import controller.relatorios.RelatorioPessoa;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -29,7 +29,7 @@ public class Listagem {
             pacientes();
         }
         if (escolha > 0 && escolha < 6) {
-            Pacientes.listar(escolha);
+            RelatorioPaciente.listar(escolha);
             pacientes();
         } else if (escolha == 0) {
             SubMenu.listagem();
@@ -71,7 +71,7 @@ public class Listagem {
             medicos();
         }
         if (escolha > 0 && escolha < 10) {
-            Medicos.listar(escolha);
+            RelatorioMedico.listar(escolha);
             medicos();
         } else if (escolha == 0) {
             SubMenu.listagem();
@@ -107,7 +107,7 @@ public class Listagem {
             pessoas();
         }
         if (escolha > 0 && escolha < 5) {
-            Pessoas.listar(escolha);
+            RelatorioPessoa.listar(escolha);
             pessoas();
         } else if (escolha == 0) {
             SubMenu.listagem();
