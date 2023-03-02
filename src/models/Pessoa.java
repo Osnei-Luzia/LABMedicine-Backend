@@ -31,15 +31,19 @@ public class Pessoa {
         this.cpf = cpf;
     }
 
+    public String getCpf() {
+        return cpf;
+    }
+
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
 
-    public void relatorio(){
+    public void relatorioPessoa() {
         System.out.println("-------------------");
-        System.out.println("ID: "+this.id);
-        System.out.println("Nome: "+this.nome);
-        System.out.println("CPF: "+this.cpf);
+        System.out.println("ID: " + this.id);
+        System.out.println("Nome: " + this.nome);
+        System.out.println("CPF: " + this.cpf);
         System.out.println("");
     }
 }

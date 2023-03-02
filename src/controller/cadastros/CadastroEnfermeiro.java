@@ -6,7 +6,7 @@ import models.Enfermeiro;
 import java.util.Scanner;
 
 public class CadastroEnfermeiro {
-    public static void cadastrar(){
+    public static void cadastrar() {
         Scanner scanner = new Scanner(System.in);
         Listas banco = Listas.getInstance();
         Enfermeiro enfermeiro = new Enfermeiro();
@@ -36,7 +36,7 @@ public class CadastroEnfermeiro {
             System.out.println("");
             System.in.read();
             view.SubMenu.cadastro();
-        }catch(Exception e){
+        } catch (Exception e) {
 
         }
     }

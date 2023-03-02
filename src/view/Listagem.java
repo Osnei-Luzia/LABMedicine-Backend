@@ -30,6 +30,7 @@ public class Listagem {
         }
         if (escolha > 0 && escolha < 6) {
             Pacientes.listar(escolha);
+            pacientes();
         } else if (escolha == 0) {
             SubMenu.listagem();
         } else {
@@ -72,6 +73,7 @@ public class Listagem {
         }
         if (escolha > 0 && escolha < 10) {
             Medicos.listar(escolha);
+            medicos();
         } else if (escolha == 0) {
             SubMenu.listagem();
         } else {
@@ -108,6 +110,7 @@ public class Listagem {
         }
         if (escolha > 0 && escolha < 5) {
             Pessoas.listar(escolha);
+            pessoas();
         } else if (escolha == 0) {
             SubMenu.listagem();
         } else {

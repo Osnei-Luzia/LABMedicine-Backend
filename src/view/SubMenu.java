@@ -6,7 +6,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class SubMenu {
-    public static void cadastro(){
+    public static void cadastro() {
         Scanner scanner = new Scanner(System.in);
         int escolha;
         System.out.println("-------------------");
@@ -15,11 +15,11 @@ public class SubMenu {
         System.out.println("1. Paciente");
         System.out.println("2. Médico");
         System.out.println("3. Enfermeiro");
-        System.out.println("4. Retornar");
+        System.out.println("0. Retornar");
         System.out.println("-------------------");
-        try{
+        try {
             escolha = scanner.nextInt();
-            switch(escolha){
+            switch (escolha) {
                 case 1:
                     CadastroPaciente.cadastrar();
                     break;
@@ -29,7 +29,7 @@ public class SubMenu {
                 case 3:
                     CadastroEnfermeiro.cadastrar();
                     break;
-                case 4:
+                case 0:
                     Menu.apresentar();
                     break;
                 default:
@@ -39,21 +39,62 @@ public class SubMenu {
                     try {
                         System.out.println("Pressione Enter para Continuar");
                         System.in.read();
-                    }catch(Exception e){
+                    } catch (Exception e) {
 
                     }
                     cadastro();
                     break;
             }
-        }
-        catch(InputMismatchException e){
+        } catch (InputMismatchException e) {
             System.out.println("Informe apenas Números");
             System.out.println("");
             cadastro();
         }
 
     }
-    public static void listagem(){
+
+    public static void atendimento() {
+        Scanner scanner = new Scanner(System.in);
+        int escolha = 0;
+        System.out.println("-------------------");
+        System.out.println("Atendimento");
+        System.out.println("");
+        System.out.println("1. Atualização do Status de Atendimento do Paciente");
+        System.out.println("2. Realização de Atendimento Médico");
+        System.out.println("0. Retornar");
+        System.out.println("-------------------");
+        try {
+            escolha = scanner.nextInt();
+        } catch (InputMismatchException e) {
+            System.out.println("Informe apenas Números");
+            System.out.println("");
+            atendimento();
+        }
+        switch (escolha) {
+            case 1:
+                //atualizar status
+                break;
+            case 2:
+                //atendimento medico
+                break;
+            case 0:
+                Menu.apresentar();
+                break;
+            default:
+                System.out.println("Opção Inválida");
+                System.out.println("");
+                try {
+                    System.out.println("Pressione Enter para Continuar");
+                    System.in.read();
+                } catch (Exception e) {
+
+                }
+                atendimento();
+                break;
+        }
+    }
+
+    public static void listagem() {
         Scanner scanner = new Scanner(System.in);
         int escolha = 0;
         System.out.println("-------------------");
@@ -62,17 +103,16 @@ public class SubMenu {
         System.out.println("1. Pacientes");
         System.out.println("2. Médicos");
         System.out.println("3. Pessoas");
-        System.out.println("4. Retornar");
+        System.out.println("0. Retornar");
         System.out.println("-------------------");
-        try{
+        try {
             escolha = scanner.nextInt();
-        }
-        catch(InputMismatchException e){
+        } catch (InputMismatchException e) {
             System.out.println("Informe apenas Números");
             System.out.println("");
             listagem();
         }
-        switch(escolha){
+        switch (escolha) {
             case 1:
                 Listagem.pacientes();
                 break;
@@ -82,21 +122,21 @@ public class SubMenu {
             case 3:
                 Listagem.pessoas();
                 break;
-            case 4:
+            case 0:
                 Menu.apresentar();
                 break;
-        default:
-            System.out.println("Opção Inválida");
-            System.out.println("");
+            default:
+                System.out.println("Opção Inválida");
+                System.out.println("");
 
-            try {
-                System.out.println("Pressione Enter para Continuar");
-                System.in.read();
-            }catch(Exception e){
+                try {
+                    System.out.println("Pressione Enter para Continuar");
+                    System.in.read();
+                } catch (Exception e) {
 
-            }
-            listagem();
-            break;
+                }
+                listagem();
+                break;
         }
     }
 }

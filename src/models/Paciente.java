@@ -40,17 +40,19 @@ public class Paciente extends Pessoa {
     public String getConvenio() {
         return convenio;
     }
+
     public void setNumeroConvenio(String numeroConvenio) {
         this.numeroConvenio = numeroConvenio;
     }
 
     public void setValidadeConvenio(String validadeConvenio) {
-        try{
+        try {
             this.validadeConvenio = LocalDate.parse(validadeConvenio, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-        }catch(NullPointerException e){
+        } catch (NullPointerException e) {
             this.validadeConvenio = null;
         }
     }
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -59,12 +61,20 @@ public class Paciente extends Pessoa {
         return status;
     }
 
-    public void relatorio(){
+    public void setAtendimentos() {
+        this.atendimentos++;
+    }
+
+    public int getAtendimentos() {
+        return atendimentos;
+    }
+
+    public void relatorio() {
         System.out.println("-------------------");
-        System.out.println("ID: "+this.id);
-        System.out.println("Nome: "+this.nome);
-        System.out.println("Convênio: "+this.convenio);
-        System.out.println("Número de Atendimentos: "+this.atendimentos);
+        System.out.println("ID: " + this.id);
+        System.out.println("Nome: " + this.nome);
+        System.out.println("Convênio: " + this.convenio);
+        System.out.println("Número de Atendimentos: " + this.atendimentos);
         System.out.println("");
     }
 }

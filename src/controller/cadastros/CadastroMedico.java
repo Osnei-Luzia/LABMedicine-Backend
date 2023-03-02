@@ -6,7 +6,7 @@ import models.Medico;
 import java.util.Scanner;
 
 public class CadastroMedico {
-    public static void cadastrar(){
+    public static void cadastrar() {
         Scanner scanner = new Scanner(System.in);
         Listas banco = Listas.getInstance();
         Medico medico = new Medico();
@@ -40,7 +40,7 @@ public class CadastroMedico {
             System.out.println("");
             System.in.read();
             view.SubMenu.cadastro();
-        }catch(Exception e){
+        } catch (Exception e) {
 
         }
     }

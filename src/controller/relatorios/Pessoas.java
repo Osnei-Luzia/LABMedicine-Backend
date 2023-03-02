@@ -28,24 +28,27 @@ public class Pessoas {
     private static void pacientePrint() {
         List<Paciente> pacientes;
         pacientes = Listas.getInstance().getPacientes();
+        System.out.println("Pacientes");
         for (int cont = 0; cont < pacientes.size(); cont++) {
-            pacientes.get(cont).relatorio();
+            pacientes.get(cont).relatorioPessoa();
         }
     }
 
     private static void medicoPrint() {
         List<Medico> medicos;
         medicos = Listas.getInstance().getMedicos();
+        System.out.println("Médicos");
         for (int cont = 0; cont < medicos.size(); cont++) {
-            medicos.get(cont).relatorio();
+            medicos.get(cont).relatorioPessoa();
         }
     }
 
     private static void enfermeiroPrint() {
         List<Enfermeiro> enfermeiros;
         enfermeiros = Listas.getInstance().getEnfermeiros();
+        System.out.println("Enfermeiros");
         for (int cont = 0; cont < enfermeiros.size(); cont++) {
-            enfermeiros.get(cont).relatorio();
+            enfermeiros.get(cont).relatorioPessoa();
         }
     }
 }

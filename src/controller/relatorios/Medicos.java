@@ -2,7 +2,6 @@ package controller.relatorios;
 
 import dataAccessObject.Listas;
 import models.Medico;
-import models.Paciente;
 
 import java.util.List;
 
@@ -40,6 +39,7 @@ public class Medicos {
                 filtro = "Todos";
                 break;
         }
+        System.out.println("Medicos");
         for (int cont = 0; cont < medicos.size(); cont++) {
             if (medicos.get(cont).getEspecializacao().equals(filtro)) {
                 medicos.get(cont).relatorio();

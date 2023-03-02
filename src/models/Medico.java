@@ -1,6 +1,6 @@
 package models;
 
-public class Medico extends Pessoa{
+public class Medico extends Pessoa {
     String instituicao;
     String crm;
     String especializacao;
@@ -34,19 +34,24 @@ public class Medico extends Pessoa{
     }
 
     public void setStatus(String status) {
-        if(status=="ativo"){
+        if (status == "ativo") {
             this.status = true;
-        }else if(status=="inativo"){
+        } else if (status == "inativo") {
             this.status = false;
         }
     }
-    public void relatorio(){
+
+    public void setAtendimentos() {
+        this.atendimentos++;
+    }
+
+    public void relatorio() {
         System.out.println("-------------------");
-        System.out.println("ID: "+this.id);
-        System.out.println("Nome: "+this.nome);
-        System.out.println("Instituição de Formação: "+this.instituicao);
-        System.out.println("CRM: "+this.crm);
-        System.out.println("Especialização: "+this.especializacao);
+        System.out.println("ID: " + this.id);
+        System.out.println("Nome: " + this.nome);
+        System.out.println("Instituição de Formação: " + this.instituicao);
+        System.out.println("CRM: " + this.crm);
+        System.out.println("Especialização: " + this.especializacao);
         System.out.println("");
     }
 }
