@@ -34,4 +34,12 @@ public class Pessoa {
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
+
+    public void relatorio(){
+        System.out.println("-------------------");
+        System.out.println("ID: "+this.id);
+        System.out.println("Nome: "+this.nome);
+        System.out.println("CPF: "+this.cpf);
+        System.out.println("");
+    }
 }

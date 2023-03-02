@@ -1,6 +1,6 @@
 package controller.cadastros;
 
-import dataAcessObject.Listas;
+import dataAccessObject.Listas;
 import models.Medico;
 
 import java.util.Scanner;
