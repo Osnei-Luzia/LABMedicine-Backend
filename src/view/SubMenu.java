@@ -2,14 +2,15 @@ package view;
 
 import controller.Atendimento;
 import controller.cadastros.*;
+import controller.generics.Stopper;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class SubMenu {
-    static Scanner scanner = new Scanner(System.in);
     public static void cadastro() {
-        int escolha;
+        Scanner scanner = new Scanner(System.in);
+        int escolha = 0;
         System.out.println("-------------------");
         System.out.println("Cadastros");
         System.out.println("");
@@ -20,41 +21,35 @@ public class SubMenu {
         System.out.println("-------------------");
         try {
             escolha = scanner.nextInt();
-            switch (escolha) {
-                case 1:
-                    CadastroPaciente.cadastrar();
-                    break;
-                case 2:
-                    CadastroMedico.cadastrar();
-                    break;
-                case 3:
-                    CadastroEnfermeiro.cadastrar();
-                    break;
-                case 0:
-                    Menu.apresentar();
-                    break;
-                default:
-                    System.out.println("Opção Inválida");
-                    System.out.println("");
-
-                    try {
-                        System.out.println("Pressione Enter para Continuar");
-                        System.in.read();
-                    } catch (Exception e) {
-
-                    }
-                    cadastro();
-                    break;
-            }
         } catch (InputMismatchException e) {
             System.out.println("Informe apenas Números");
-            System.out.println("");
+            Stopper.stop();
             cadastro();
+        }
+        switch (escolha) {
+            case 1:
+                CadastroPaciente.cadastrar();
+                break;
+            case 2:
+                CadastroMedico.cadastrar();
+                break;
+            case 3:
+                CadastroEnfermeiro.cadastrar();
+                break;
+            case 0:
+                Menu.apresentar();
+                break;
+            default:
+                System.out.println("Opção Inválida");
+                Stopper.stop();
+                cadastro();
+                break;
         }
 
     }
 
     public static void atendimento() {
+        Scanner scanner = new Scanner(System.in);
         int escolha = 0;
         System.out.println("-------------------");
         System.out.println("Atendimento");
@@ -67,7 +62,7 @@ public class SubMenu {
             escolha = scanner.nextInt();
         } catch (InputMismatchException e) {
             System.out.println("Informe apenas Números");
-            System.out.println("");
+            Stopper.stop();
             atendimento();
         }
         switch (escolha) {
@@ -84,19 +79,14 @@ public class SubMenu {
                 break;
             default:
                 System.out.println("Opção Inválida");
-                System.out.println("");
-                try {
-                    System.out.println("Pressione Enter para Continuar");
-                    System.in.read();
-                } catch (Exception e) {
-
-                }
+                Stopper.stop();
                 atendimento();
                 break;
         }
     }
 
     public static void listagem() {
+        Scanner scanner = new Scanner(System.in);
         int escolha = 0;
         System.out.println("-------------------");
         System.out.println("Listagens");
@@ -110,7 +100,7 @@ public class SubMenu {
             escolha = scanner.nextInt();
         } catch (InputMismatchException e) {
             System.out.println("Informe apenas Números");
-            System.out.println("");
+            Stopper.stop();
             listagem();
         }
         switch (escolha) {
@@ -128,14 +118,7 @@ public class SubMenu {
                 break;
             default:
                 System.out.println("Opção Inválida");
-                System.out.println("");
-
-                try {
-                    System.out.println("Pressione Enter para Continuar");
-                    System.in.read();
-                } catch (Exception e) {
-
-                }
+                Stopper.stop();
                 listagem();
                 break;
         }

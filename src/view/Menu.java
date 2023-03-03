@@ -1,12 +1,11 @@
 package view;
 
+import controller.generics.Stopper;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import controller.*;
-
 public class Menu {
-
     public static void apresentar() {
         Scanner scanner = new Scanner(System.in);
         int escolha = 0;
@@ -22,7 +21,7 @@ public class Menu {
             escolha = scanner.nextInt();
         } catch (InputMismatchException e) {
             System.out.println("Informe apenas Números");
-            System.out.println("");
+            Stopper.stop();
             apresentar();
         }
         switch (escolha) {
@@ -39,13 +38,7 @@ public class Menu {
                 return;
             default:
                 System.out.println("Opção Inválida");
-                System.out.println("");
-                try {
-                    System.out.println("Pressione Enter para Continuar");
-                    System.in.read();
-                } catch (Exception e) {
-
-                }
+                Stopper.stop();
                 apresentar();
                 break;
         }

@@ -1,9 +1,10 @@
 package controller.cadastros;
 
+import controller.generics.CampoOpcoes;
+import controller.generics.Stopper;
 import dataAccessObject.Listas;
 import models.Paciente;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class CadastroPaciente {
@@ -40,35 +41,9 @@ public class CadastroPaciente {
             System.out.println("Informe a data de vencimento do convênio");
             paciente.setValidadeConvenio(Validacoes.isDataValida(scanner.nextLine()));
         }
-        banco.addPaciente(campoStatus(paciente));
-        try {
-            System.out.println("");
-            System.out.println("Cadastro realizado com Sucesso.");
-            System.out.println("Enter para continuar");
-            System.out.println("");
-            System.in.read();
-            view.SubMenu.cadastro();
-        } catch (Exception e) {
-
-        }
-    }
-    private static Paciente campoStatus(Paciente paciente) {
-        try {
-            System.out.println("1. Aguardando Atendimento");
-            System.out.println("2. Em Atendimento");
-            System.out.println("3. Atendido");
-            System.out.println("4. Não Atendido");
-            int escolha = scanner.nextInt();
-            if (escolha > 0 && escolha < 5) {
-                paciente.setStatus(scanner.nextInt());
-                return paciente;
-            }else{
-                return campoStatus(paciente);
-            }
-        } catch (InputMismatchException e) {
-            System.out.println("Informe apenas Números");
-            System.out.println("");
-            return campoStatus(paciente);
-        }
+        banco.addPaciente(CampoOpcoes.campoStatus(paciente));
+        System.out.println("Cadastro realizado com Sucesso.");
+        Stopper.stop();
+        view.SubMenu.cadastro();
     }
 }

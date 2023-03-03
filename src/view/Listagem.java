@@ -1,5 +1,6 @@
 package view;
 
+import controller.generics.Stopper;
 import controller.relatorios.RelatorioMedico;
 import controller.relatorios.RelatorioPaciente;
 import controller.relatorios.RelatorioPessoa;
@@ -8,11 +9,11 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Listagem {
-    static Scanner scanner = new Scanner(System.in);
     public static void pacientes() {
+        Scanner scanner = new Scanner(System.in);
         int escolha = 0;
         System.out.println("-------------------");
-        System.out.println("Relatórios de Pacientes");
+        System.out.println("Relatório de Pacientes");
         System.out.println("");
         System.out.println("1. Aguardando Atendimento");
         System.out.println("2. Em Atendimento");
@@ -25,7 +26,7 @@ public class Listagem {
             escolha = scanner.nextInt();
         } catch (InputMismatchException e) {
             System.out.println("Informe apenas Números");
-            System.out.println("");
+            Stopper.stop();
             pacientes();
         }
         if (escolha > 0 && escolha < 6) {
@@ -35,22 +36,17 @@ public class Listagem {
             SubMenu.listagem();
         } else {
             System.out.println("Opção Inválida");
-            System.out.println("");
-            try {
-                System.out.println("Pressione Enter para Continuar");
-                System.in.read();
-            } catch (Exception e) {
-
-            }
+            Stopper.stop();
             pacientes();
         }
     }
 
 
     public static void medicos() {
+        Scanner scanner = new Scanner(System.in);
         int escolha = 0;
         System.out.println("-------------------");
-        System.out.println("Relatórios de Médicos");
+        System.out.println("Relatório de Médicos");
         System.out.println("");
         System.out.println("1. Clínico Geral");
         System.out.println("2. Anestesista");
@@ -67,7 +63,7 @@ public class Listagem {
             escolha = scanner.nextInt();
         } catch (InputMismatchException e) {
             System.out.println("Informe apenas Números");
-            System.out.println("");
+            Stopper.stop();
             medicos();
         }
         if (escolha > 0 && escolha < 10) {
@@ -77,21 +73,16 @@ public class Listagem {
             SubMenu.listagem();
         } else {
             System.out.println("Opção Inválida");
-            System.out.println("");
-            try {
-                System.out.println("Pressione Enter para Continuar");
-                System.in.read();
-            } catch (Exception e) {
-
-            }
+            Stopper.stop();
             medicos();
         }
     }
 
     public static void pessoas() {
+        Scanner scanner = new Scanner(System.in);
         int escolha = 0;
         System.out.println("-------------------");
-        System.out.println("Relatórios de Pessoas");
+        System.out.println("Relatório de Pessoas");
         System.out.println("");
         System.out.println("1. Pacientes");
         System.out.println("2. Médicos");
@@ -103,7 +94,7 @@ public class Listagem {
             escolha = scanner.nextInt();
         } catch (InputMismatchException e) {
             System.out.println("Informe apenas Números");
-            System.out.println("");
+            Stopper.stop();
             pessoas();
         }
         if (escolha > 0 && escolha < 5) {
@@ -113,13 +104,7 @@ public class Listagem {
             SubMenu.listagem();
         } else {
             System.out.println("Opção Inválida");
-            System.out.println("");
-            try {
-                System.out.println("Pressione Enter para Continuar");
-                System.in.read();
-            } catch (Exception e) {
-
-            }
+            Stopper.stop();
             pessoas();
         }
     }
