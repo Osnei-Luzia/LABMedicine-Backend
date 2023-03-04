@@ -1,12 +1,13 @@
-package controller;
+package controller.cadastros;
 
-import dataAcessObject.Listas;
+import controller.generics.Stopper;
+import dataAccessObject.Listas;
 import models.Medico;
 
 import java.util.Scanner;
 
 public class CadastroMedico {
-    public static void cadastrar(){
+    public static void cadastrar() {
         Scanner scanner = new Scanner(System.in);
         Listas banco = Listas.getInstance();
         Medico medico = new Medico();
@@ -29,19 +30,12 @@ public class CadastroMedico {
         System.out.println("Informe o CRM - Obrigatório");
         medico.setCrm(Validacoes.campoObrigatorio(scanner.nextLine()));
         System.out.println("Informe a especialização - Obrigatório");
-        medico.setEspecializacao(Validacoes.campoObrigatorio(scanner.nextLine()));
+        medico.setEspecializacao(Validacoes.campoEspecializacao(0));
         System.out.println("O médico está Ativo ou Inativo? - Obrigatório");
         medico.setStatus(Validacoes.campoObrigatorio(Validacoes.isStatusMedicoValido(scanner.nextLine())));
         banco.addMedico(medico);
-        try {
-            System.out.println("");
-            System.out.println("Cadastro realizado com Sucesso.");
-            System.out.println("Enter para continuar");
-            System.out.println("");
-            System.in.read();
-            view.SubMenu.cadastro();
-        }catch(Exception e){
-
-        }
+        System.out.println("Cadastro realizado com Sucesso.");
+        Stopper.stop();
+        view.SubMenu.cadastro();
     }
 }

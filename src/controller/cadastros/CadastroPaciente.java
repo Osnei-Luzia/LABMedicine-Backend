@@ -1,16 +1,16 @@
-package controller;
+package controller.cadastros;
 
-import dataAcessObject.Listas;
+import controller.generics.Stopper;
+import dataAccessObject.Listas;
 import models.Paciente;
 
 import java.util.Scanner;
 
-public class CadastroPaciente{
-
-    public static void cadastrar(){
-        Scanner scanner = new Scanner(System.in);
+public class CadastroPaciente {
+    public static void cadastrar() {
         Listas banco = Listas.getInstance();
         Paciente paciente = new Paciente();
+        Scanner scanner = new Scanner(System.in);
 
         //Pessoa
         System.out.println("Informe o nome - Obrigatório");
@@ -33,23 +33,16 @@ public class CadastroPaciente{
         paciente.setCuidados(Validacoes.repetirCampo(scanner.nextLine()));
         System.out.println("Informe o convênio");
         paciente.setConvenio(scanner.nextLine());
-        if(!paciente.getConvenio().equals("")){
+        if (!paciente.getConvenio().equals("")) {
             System.out.println("Informe o número do convênio");
             paciente.setNumeroConvenio(scanner.nextLine());
             System.out.println("Informe a data de vencimento do convênio");
             paciente.setValidadeConvenio(Validacoes.isDataValida(scanner.nextLine()));
         }
-        //paciente.setStatus();
+        paciente.setStatus(Validacoes.campoStatus(0));
         banco.addPaciente(paciente);
-        try {
-            System.out.println("");
-            System.out.println("Cadastro realizado com Sucesso.");
-            System.out.println("Enter para continuar");
-            System.out.println("");
-            System.in.read();
-            view.SubMenu.cadastro();
-        }catch(Exception e){
-
-        }
+        System.out.println("Cadastro realizado com Sucesso.");
+        Stopper.stop();
+        view.SubMenu.cadastro();
     }
 }

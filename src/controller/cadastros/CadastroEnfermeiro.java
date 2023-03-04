@@ -1,12 +1,13 @@
-package controller;
+package controller.cadastros;
 
-import dataAcessObject.Listas;
+import controller.generics.Stopper;
+import dataAccessObject.Listas;
 import models.Enfermeiro;
 
 import java.util.Scanner;
 
 public class CadastroEnfermeiro {
-    public static void cadastrar(){
+    public static void cadastrar() {
         Scanner scanner = new Scanner(System.in);
         Listas banco = Listas.getInstance();
         Enfermeiro enfermeiro = new Enfermeiro();
@@ -29,15 +30,8 @@ public class CadastroEnfermeiro {
         System.out.println("Informe o COFEN/UF - Obrigatório");
         enfermeiro.setCofen(Validacoes.campoObrigatorio(scanner.nextLine()));
         banco.addEnfermeiro(enfermeiro);
-        try {
-            System.out.println("");
-            System.out.println("Cadastro realizado com Sucesso.");
-            System.out.println("Enter para continuar");
-            System.out.println("");
-            System.in.read();
-            view.SubMenu.cadastro();
-        }catch(Exception e){
-
-        }
+        System.out.println("Cadastro realizado com Sucesso.");
+        Stopper.stop();
+        view.SubMenu.cadastro();
     }
 }

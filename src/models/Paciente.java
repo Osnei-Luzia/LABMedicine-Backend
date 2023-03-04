@@ -46,14 +46,46 @@ public class Paciente extends Pessoa {
     }
 
     public void setValidadeConvenio(String validadeConvenio) {
-        try{
+        try {
             this.validadeConvenio = LocalDate.parse(validadeConvenio, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-        }catch(NullPointerException e){
+        } catch (NullPointerException e) {
             this.validadeConvenio = null;
         }
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setStatus(int status) {
+        switch (status) {
+            case 1:
+                this.status = "Aguardando Atendimento";
+                break;
+            case 2:
+                this.status = "Em Atendimento";
+                break;
+            case 3:
+                this.status = "Atendido";
+                break;
+            case 4:
+                this.status = "Não Atendido";
+                break;
+            default:
+                break;
+        }
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setAtendimentos() {
+        this.atendimentos++;
+    }
+
+    public void relatorio() {
+        System.out.println("-------------------");
+        System.out.println("ID: " + this.id);
+        System.out.println("Nome: " + this.nome);
+        System.out.println("Convênio: " + this.convenio);
+        System.out.println("Número de Atendimentos: " + this.atendimentos);
+        System.out.println("");
     }
 }

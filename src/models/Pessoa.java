@@ -15,6 +15,10 @@ public class Pessoa {
         this.id = id;
     }
 
+    public int getId() {
+        return id;
+    }
+
     public void setNome(String nome) {
         this.nome = nome;
     }
@@ -33,5 +37,13 @@ public class Pessoa {
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
+    }
+
+    public void relatorioPessoa() {
+        System.out.println("-------------------");
+        System.out.println("ID: " + this.id);
+        System.out.println("Nome: " + this.nome);
+        System.out.println("CPF: " + this.cpf);
+        System.out.println("");
     }
 }
