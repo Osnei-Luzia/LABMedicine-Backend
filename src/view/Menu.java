@@ -35,6 +35,7 @@ public class Menu {
                 SubMenu.listagem();
                 break;
             case 0:
+                System.exit(0);
                 return;
             default:
                 System.out.println("Opção Inválida");
