@@ -41,7 +41,6 @@ public class Listagem {
         }
     }
 
-
     public static void medicos() {
         Scanner scanner = new Scanner(System.in);
         int escolha = 0;
