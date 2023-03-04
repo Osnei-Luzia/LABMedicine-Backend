@@ -1,5 +1,6 @@
 package controller.relatorios;
 
+import controller.generics.Stopper;
 import dataAccessObject.Listas;
 import models.*;
 
@@ -23,6 +24,7 @@ public class RelatorioPessoa {
                 enfermeiroPrint();
                 break;
         }
+        Stopper.stop();
     }
 
     private static void pacientePrint() {

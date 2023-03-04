@@ -1,6 +1,6 @@
 package controller;
 
-import controller.generics.CampoOpcoes;
+import controller.cadastros.Validacoes;
 import dataAccessObject.Listas;
 import models.Medico;
 import models.Paciente;
@@ -21,7 +21,7 @@ public class Atendimento {
 
         for (int cont = 0; cont < pacientes.size(); cont++) {
             if (pacientes.get(cont).getId() == pacienteId) {
-                CampoOpcoes.campoStatus(pacientes.get(cont));
+                pacientes.get(cont).setStatus(Validacoes.campoStatus(0));
             }
         }
     }

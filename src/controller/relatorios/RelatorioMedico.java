@@ -1,5 +1,6 @@
 package controller.relatorios;
 
+import controller.generics.Stopper;
 import dataAccessObject.Listas;
 import models.Medico;
 
@@ -48,5 +49,6 @@ public class RelatorioMedico {
                 medicos.get(cont).relatorio();
             }
         }
+        Stopper.stop();
     }
 }

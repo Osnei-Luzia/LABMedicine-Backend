@@ -1,6 +1,5 @@
 package controller.cadastros;
 
-import controller.generics.CampoOpcoes;
 import controller.generics.Stopper;
 import dataAccessObject.Listas;
 import models.Paciente;
@@ -8,11 +7,10 @@ import models.Paciente;
 import java.util.Scanner;
 
 public class CadastroPaciente {
-    static Scanner scanner = new Scanner(System.in);
-
     public static void cadastrar() {
         Listas banco = Listas.getInstance();
         Paciente paciente = new Paciente();
+        Scanner scanner = new Scanner(System.in);
 
         //Pessoa
         System.out.println("Informe o nome - Obrigatório");
@@ -41,7 +39,8 @@ public class CadastroPaciente {
             System.out.println("Informe a data de vencimento do convênio");
             paciente.setValidadeConvenio(Validacoes.isDataValida(scanner.nextLine()));
         }
-        banco.addPaciente(CampoOpcoes.campoStatus(paciente));
+        paciente.setStatus(Validacoes.campoStatus(0));
+        banco.addPaciente(paciente);
         System.out.println("Cadastro realizado com Sucesso.");
         Stopper.stop();
         view.SubMenu.cadastro();

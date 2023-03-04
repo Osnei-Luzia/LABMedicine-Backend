@@ -1,6 +1,5 @@
 package controller.cadastros;
 
-import controller.generics.CampoOpcoes;
 import controller.generics.Stopper;
 import dataAccessObject.Listas;
 import models.Medico;
@@ -31,7 +30,7 @@ public class CadastroMedico {
         System.out.println("Informe o CRM - Obrigatório");
         medico.setCrm(Validacoes.campoObrigatorio(scanner.nextLine()));
         System.out.println("Informe a especialização - Obrigatório");
-        //medico.setEspecializacao(CampoOpcoes.campoEspecializacao());
+        medico.setEspecializacao(Validacoes.campoEspecializacao(0));
         System.out.println("O médico está Ativo ou Inativo? - Obrigatório");
         medico.setStatus(Validacoes.campoObrigatorio(Validacoes.isStatusMedicoValido(scanner.nextLine())));
         banco.addMedico(medico);
