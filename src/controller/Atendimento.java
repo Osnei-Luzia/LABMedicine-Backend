@@ -27,7 +27,7 @@ public class Atendimento {
                     paciente = pacientes.get(cont);
                 }
             }
-            if(Objects.isNull(paciente)){
+            if (Objects.isNull(paciente)) {
                 System.out.println("ID Inexistente");
                 Stopper.stop();
             }
@@ -76,7 +76,7 @@ public class Atendimento {
                 System.out.println("Id de Médico inexistente");
                 Stopper.stop();
             }
-        } catch(InputMismatchException e){
+        } catch (InputMismatchException e) {
             System.out.println("Digite apenas números");
             Stopper.stop();
         }

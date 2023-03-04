@@ -1,4 +1,5 @@
 package controller.generics;
+
 public class Stopper {
     public static void stop() {
         System.out.println("");
