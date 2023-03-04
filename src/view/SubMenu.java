@@ -45,7 +45,6 @@ public class SubMenu {
                 cadastro();
                 break;
         }
-
     }
 
     public static void atendimento() {
