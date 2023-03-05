@@ -65,7 +65,7 @@ Cadastros
 <br>
 
 <a  id="#cadastros"></a>
-####Cadastros
+#### Cadastros
 Ao selecionar o cadastro desejado, serão pedidos dados gerais presentes em todos os cadastros e únicos para cada um.
 Caso haja alguma inserção incorreta, o sistema retornará um aviso de erro de acordo com o problema. E ao completar o cadastro, o sistema retornará uma mensagem de sucesso.
 
@@ -152,7 +152,7 @@ Atendimento
 ```
 <br>
 <a id="statusAtendimento"></a>
-####Atualização do Status de Atendimento
+#### Atualização do Status de Atendimento
 O usuário deverá informar o ID do paciente, gerado pelo sistema, e então seu novo status, dentro das opções fornecidas.
 
 Caso o ID não existir no sistema, o usuário será redirecionado para a [tela de atendimentos](#telaTres) após uma mensagem de erro.
@@ -169,7 +169,7 @@ Informe o Status do Paciente - Obrigatório
 ```
 <br>
 <a id="atendimentoMedico"></a>
-####Atendimento Médico
+#### Atendimento Médico
 O usuário deverá informar o ID do médico que irá atender, em seguida o ID do paciente que será atendido. Caso ambos IDs existam, o atendimento será registrado, incrementando ao número de atendimentos de cada participante e trocando o status do paciente para "Em Atendimento" automaticamente.
 
 Caso quaisquer IDs não existirem no sistema, o usuário será redirecionado para a [tela de atendimentos](#telaTres) após uma mensagem de erro.
@@ -181,7 +181,7 @@ Informe o ID do paciente
 ```
 <br>
 <a id="listagens"></a>
-###Listagens
+### Listagens
 Na [tela de listagens](#telaQuatro) é possível escolher entre três tipos de listagens: Pacientes, Médicos e Pessoas.
 
 A opção Retornar levará o usuário para o menu principal.
@@ -199,7 +199,7 @@ Listagens
 ```
 <br>
 <a id="listagemPacientes"></a>
-####Listagem de Pacientes
+#### Listagem de Pacientes
 Dentro da listagem de Pacientes, o usuário poderá filtrar, dentre todos os pacientes cadastrados, pelo Status de Atendimento.
 
 A opção Retornar levará o usuário para a [tela de listagens](#listagens).
