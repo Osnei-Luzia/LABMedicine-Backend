@@ -8,6 +8,7 @@ LABMedicine Backend é apenas um MVP de aplicação Back-End para gestão de inf
 1. [Páginas e suas Funcionalidades](#paginas)
 2. [Tecnologias](#tech)
 3. [Instalação](#install)
+4. [Melhorias](#melhorias)
 
 <a id="paginas"></a>
 ## Páginas e Funcionalidades
@@ -334,5 +335,11 @@ Abra o terminal (no Linux) ou o Prompt de Comando (Windows) no mesmo local onde 
 javac Main.java
 java Main
 ```
+<br>
+
+<a id="melhorias"></a>
+## Melhorias
+
+O LABMedicine como MVP cumpre com seus objetivos iniciais. Os critérios que poderiam ser melhorados seriam de refatoração de código, desde implementação de técnicas mais modernas de processar dados até formas mais robustas de organização de projeto com o objetivo de facilitar a escalabilidade da aplicação em longo prazo.
 
 [Java]: <https://www.java.com/>
