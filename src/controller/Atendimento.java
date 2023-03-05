@@ -24,6 +24,7 @@ public class Atendimento {
             for (int cont = 0; cont < pacientes.size(); cont++) {
                 if (pacientes.get(cont).getId() == pacienteId) {
                     pacientes.get(cont).setStatus(Validacoes.campoStatus(0));
+                    System.out.println("Status Atualizado");
                     paciente = pacientes.get(cont);
                 }
             }
@@ -64,6 +65,7 @@ public class Atendimento {
                     }
                 }
                 if (!Objects.isNull(paciente)) {
+                    paciente.setStatus(2);
                     paciente.setAtendimentos();
                     medico.setAtendimentos();
                     System.out.println("Atendimentos registrados");

@@ -63,6 +63,8 @@ public class Validacoes {
 
     public static int campoStatus(int escolha) {
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Informe o Status do Paciente - Obrigatório");
+        System.out.println("");
         System.out.println("1. Aguardando Atendimento");
         System.out.println("2. Em Atendimento");
         System.out.println("3. Atendido");
@@ -86,6 +88,8 @@ public class Validacoes {
 
     public static int campoEspecializacao(int escolha) {
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Informe a especialização - Obrigatório");
+        System.out.println("");
         System.out.println("1. Clínico Geral");
         System.out.println("2. Anestesista");
         System.out.println("3. Dermatologia");
