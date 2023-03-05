@@ -29,7 +29,6 @@ public class CadastroMedico {
         medico.setInstituicao(Validacoes.campoObrigatorio(scanner.nextLine()));
         System.out.println("Informe o CRM - Obrigatório");
         medico.setCrm(Validacoes.campoObrigatorio(scanner.nextLine()));
-        System.out.println("Informe a especialização - Obrigatório");
         medico.setEspecializacao(Validacoes.campoEspecializacao(0));
         System.out.println("O médico está Ativo ou Inativo? - Obrigatório");
         medico.setStatus(Validacoes.campoObrigatorio(Validacoes.isStatusMedicoValido(scanner.nextLine())));

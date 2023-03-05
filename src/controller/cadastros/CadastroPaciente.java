@@ -36,7 +36,7 @@ public class CadastroPaciente {
         if (!paciente.getConvenio().equals("")) {
             System.out.println("Informe o número do convênio");
             paciente.setNumeroConvenio(scanner.nextLine());
-            System.out.println("Informe a data de vencimento do convênio");
+            System.out.println("Informe a data de vencimento do convênio - Obrigatório");
             paciente.setValidadeConvenio(Validacoes.isDataValida(scanner.nextLine()));
         }
         paciente.setStatus(Validacoes.campoStatus(0));
