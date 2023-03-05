@@ -12,7 +12,7 @@ LABMedicine Backend é apenas um MVP de aplicação Back-End para gestão de inf
 <a id="paginas"></a>
 ## Páginas e Funcionalidades
 
-Sendo apenas um Produto Viávle Mínimo, o LABMedicine BackEnd é operado inteiramente por terminal, com a funcionalidade de gerir três processos para o cliente: 
+Sendo apenas um Produto Viável Mínimo, o LABMedicine BackEnd é operado inteiramente por terminal, com a funcionalidade de gerir três processos para o cliente: 
 - Cadastro de pacientes, médicos e enfermeiros;
 - Atendimento, onde é possível atualizar a situação do paciente dentro do hospital;
 - Listagem de informações específicas de todos os cadastrados no sistema.
@@ -46,12 +46,12 @@ LABMedicine-Backend
 ```
 <br>
 
-<a  id="#menuCadastros"></a>
+<a  id="menuCadastros"></a>
 ### Menu de Cadastros
 Na [tela de cadastros](#telaDois) é possível escolher entre três tipos de registros: Paciente, Médico e Enfermeiro. Ao selecionar uma das opções, uma série de perguntas serão feitas para a realização do cadastro escolhido.
 
 A opção Retornar levará o usuário para o menu principal.
-<a  id="#telaDois"></a>
+<a  id="telaDois"></a>
 ```
 -------------------
 Cadastros
@@ -64,7 +64,7 @@ Cadastros
 ```
 <br>
 
-<a  id="#cadastros"></a>
+<a  id="cadastros"></a>
 #### Cadastros
 Ao selecionar o cadastro desejado, serão pedidos dados gerais presentes em todos os cadastros e únicos para cada um.
 Caso haja alguma inserção incorreta, o sistema retornará um aviso de erro de acordo com o problema. E ao completar o cadastro, o sistema retornará uma mensagem de sucesso.
@@ -135,7 +135,9 @@ Informe a Instituição de Ensino da Formação - Obrigatório
 Informe o COFEN/UF - Obrigatório
 ```
 <br>
+
 <a  id="menuAtendimentos"></a>
+
 ### Menu Atendimentos
 Na [tela de atendimentos](#telaTres) é possível escolher entre dois processos: Atualização do Status de Atendimento do Paciente e Realização de Atendimento Médico.
 
@@ -151,7 +153,9 @@ Atendimento
 -------------------
 ```
 <br>
+
 <a id="statusAtendimento"></a>
+
 #### Atualização do Status de Atendimento
 O usuário deverá informar o ID do paciente, gerado pelo sistema, e então seu novo status, dentro das opções fornecidas.
 
@@ -168,7 +172,9 @@ Informe o Status do Paciente - Obrigatório
 4. Não Atendido
 ```
 <br>
+
 <a id="atendimentoMedico"></a>
+
 #### Atendimento Médico
 O usuário deverá informar o ID do médico que irá atender, em seguida o ID do paciente que será atendido. Caso ambos IDs existam, o atendimento será registrado, incrementando ao número de atendimentos de cada participante e trocando o status do paciente para "Em Atendimento" automaticamente.
 
@@ -180,7 +186,9 @@ Informe o ID do médico
 Informe o ID do paciente
 ```
 <br>
+
 <a id="menuListagens"></a>
+
 ### Listagens
 Na [tela de listagens](#telaQuatro) é possível escolher entre três tipos de listagens: Pacientes, Médicos e Pessoas.
 
@@ -198,7 +206,9 @@ Listagens
 -------------------
 ```
 <br>
+
 <a id="listagemPacientes"></a>
+
 #### Listagem de Pacientes
 Dentro da listagem de Pacientes, o usuário poderá filtrar, dentre todos os pacientes cadastrados, pelo Status de Atendimento.
 
@@ -225,8 +235,10 @@ Convênio: "Nome do Convênio"
 Número de Atendimentos: 0
 ```
 <br>
+
 <a id="listagemMedicos"></a>
-####Listagem de Médicos
+
+#### Listagem de Médicos
 Dentro da listagem de Médicos, o usuário poderá filtrar, dentre todos os médicos cadastrados, pela Especialização.
 
 A opção Retornar levará o usuário para a [tela de listagens](#listagens).
@@ -251,14 +263,16 @@ Ao escolher uma das opções o sistema retornará dos médicos o ID, o Nome, a I
 Medicos
 -------------------
 ID: 2
-Nome: 1
-Instituição de Formação: 1
-CRM: 1
+Nome: "Nome do Médico"
+Instituição de Formação: "Nome da Instituição"
+CRM: 100
 Especialização: Clínico Geral
 ```
 <br>
+
 <a id="listagemPessoas"></a>
-####Listagem de Pessoas
+
+#### Listagem de Pessoas
 Dentro da listagem de Pessoas, o usuário poderá filtrar, dentre todas as pessoas cadastrados, pela Categoria.
 
 A opção Retornar levará o usuário para a [tela de listagens](#listagens).
