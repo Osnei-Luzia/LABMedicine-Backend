@@ -18,7 +18,7 @@ Sendo apenas um Produto Viávle Mínimo, o LABMedicine BackEnd é operado inteir
 - Listagem de informações específicas de todos os cadastrados no sistema.
 
 1. [Menu Principal](#menuPrincipal)
-2. [Menu de Cadastros](#menuCadastro)
+2. [Menu de Cadastros](#menuCadastros)
 2.1 [Cadastros](#cadastros)
 3. [Menu de Atendimentos](#menuAtendimentos)
 3.1 [Atualização do Status de Atendimento](#statusAtendimento)
@@ -46,7 +46,7 @@ LABMedicine-Backend
 ```
 <br>
 
-<a  id="#menuCadastro"></a>
+<a  id="#menuCadastros"></a>
 ### Menu de Cadastros
 Na [tela de cadastros](#telaDois) é possível escolher entre três tipos de registros: Paciente, Médico e Enfermeiro. Ao selecionar uma das opções, uma série de perguntas serão feitas para a realização do cadastro escolhido.
 
@@ -180,7 +180,7 @@ Informe o ID do médico
 Informe o ID do paciente
 ```
 <br>
-<a id="listagens"></a>
+<a id="menuListagens"></a>
 ### Listagens
 Na [tela de listagens](#telaQuatro) é possível escolher entre três tipos de listagens: Pacientes, Médicos e Pessoas.
 
