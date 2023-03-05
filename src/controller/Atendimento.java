@@ -25,6 +25,7 @@ public class Atendimento {
                 if (pacientes.get(cont).getId() == pacienteId) {
                     pacientes.get(cont).setStatus(Validacoes.campoStatus(0));
                     System.out.println("Status Atualizado");
+                    Stopper.stop();
                     paciente = pacientes.get(cont);
                 }
             }
