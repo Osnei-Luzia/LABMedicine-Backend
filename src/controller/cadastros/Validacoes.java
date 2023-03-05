@@ -18,7 +18,7 @@ public class Validacoes {
             LocalDate dataFormatada = LocalDate.parse(resposta, formatter);
             return resposta;
         } catch (Exception e) {
-            System.out.println("Formato inválido, use 00/00/0000");
+            System.out.println("Formato inválido, use dd/mm/aaaa");
             return isDataValida(scanner.nextLine());
         }
     }
